@@ -1,0 +1,31 @@
+<div *ngIf="loading" class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+    <span>Loading...</span>
+</div>
+  
+<div *ngIf="error">
+<p class="errorMessage">Something went wrong...</p>
+</div>
+  
+<div *ngIf="showMe" class="mainPage">
+    <span class="pageTitle">{{ title }}</span>
+    <mat-grid-list cols="2" rowHeight="500px" gutterSize="2px">
+        <mat-grid-tile *ngFor="let launch of launches">
+            <mat-card class="launchCard" fxFlex="33" style="margin: 15px;">
+                <mat-card-header>
+                <mat-card-title>{{ launch.name }}</mat-card-title>
+                </mat-card-header>
+                <div *ngIf="launch.links.flickr.original[0]">
+                    <img mat-card-image class="cardImage" [src]="launch.links.flickr.original[0]" alt="{{ launch.name }}">
+                </div>
+                <mat-card-content>
+                <p>{{ launch.details }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="buttonDetails" color="accent" mat-raised-button [routerLink]="['/launches', launch.id]">LAUNCH DETAILS</button>
+                    <button class="buttonDetails" color="accent" mat-raised-button [routerLink]="['/rockets', launch.rocket]">ROCKET DETAILS</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

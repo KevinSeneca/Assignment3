@@ -1,0 +1,21 @@
+.drawer-container {
+    height: 100vh;
+  }
+  
+  .main-app {
+    height: 100%;
+  }
+  
+  .app-sidenav {
+    width: 250px;
+  }
+  
+  .app-sidenav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+

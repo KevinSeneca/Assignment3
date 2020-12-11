@@ -1,0 +1,21 @@
+.launchCard {
+    text-align: justify;
+    max-width: 600px;
+    width: 100%;
+    height: 400px;
+    margin: 20px;
+    display: inline-flexbox;
+}
+  
+.cardImage{
+    object-fit: cover; 
+    border-image: round;
+    align-items: center;
+    object-position: center;
+    height: 180px; 
+    object-fit: contain;
+}
+
+.buttonDetails {
+    margin: 10px;
+}

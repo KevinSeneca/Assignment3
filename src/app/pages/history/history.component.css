@@ -1,0 +1,16 @@
+.historyCard {
+    max-width: 500px;
+    margin: 30px;
+    padding: 10px 20px 10px 20px;
+    height: 400px;
+    display: inline;
+  }
+  
+.link-button {
+    color: darkorange;
+    float: right;
+}
+
+.gridTile{
+    margin: 5px;
+}

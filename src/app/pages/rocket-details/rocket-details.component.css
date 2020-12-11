@@ -1,0 +1,33 @@
+.cardImage{
+    width:50%;
+    height:50%;
+}
+.mainPage {
+    color: lightsalmon;
+}
+table caption {
+    font-size: 20px;
+    color:  white;
+}
+
+table {
+    width: 50%;
+
+}
+
+th, td {
+    padding: 15px;
+  }
+  
+
+  th {
+    text-align: left;
+    font-size: 16px;
+    color: white;
+    background-color: lightsalmon;
+}
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

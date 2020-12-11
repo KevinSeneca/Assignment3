@@ -1,0 +1,88 @@
+<div *ngIf="loading" class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+    <span>Loading...</span>
+</div>
+  
+<div *ngIf="error">
+<p class="errorMessage">Something went wrong...</p>
+</div>
+
+<div *ngIf="showMe" class="mainPage">
+    <span class="pageTitle">{{ rocketDetails.name }}</span>
+    <p>{{ rocketDetails.description }}</p>
+
+    <div class= "datatable">    
+        <table>
+            <caption>Rocket Specs</caption>
+            <tr>
+            <th>Specification</th>
+            <th>Value</th>
+            </tr>
+            <tr>
+                <td>Rocket Active</td>
+                <td>{{ rocketDetails.active }}</td>
+            </tr>
+            <tr>
+                <td>Cost Per Launch</td>
+                <td>{{ rocketDetails.cost_per_launch | currency }}</td>
+            </tr>
+            <tr>
+                <td>Success Rate Percentage</td>
+                <td>{{ rocketDetails.success_rate_pct | percent }}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{ rocketDetails.country }}</td>
+            </tr>
+            <tr>
+                <td>Date of First Launch</td>
+                <td>{{ rocketDetails.first_flight | date }}</td>
+            </tr>
+            <tr>
+                <td>Height (meters)</td>
+                <td>{{ rocketDetails.height.meters }}</td>
+            </tr>
+            <tr>
+                <td>Diameter (meters)</td>
+                <td>{{ rocketDetails.diameter.meters }}</td>
+            </tr>
+            <tr>
+                <td>Mass (kg)</td>
+                <td>{{ rocketDetails.mass.kg }}</td>
+            </tr>
+            <tr>
+                <td>Engine Count</td>
+                <td>{{ rocketDetails.engines.number }}</td>
+            </tr>
+            <tr>
+                <td>Engine Type</td>
+                <td>{{ rocketDetails.engines.type }}</td>
+            </tr>
+            <tr>
+                <td>Propellents</td>
+                <td>{{ rocketDetails.engines.propellant_1 }} & {{ rocketDetails.engines.propellant_2 }}</td>
+            </tr>
+            <tr>
+                <td>Landing Legs Count</td>
+                <td>{{ rocketDetails.landing_legs.number }}</td>
+            </tr>
+            <tr>
+                <td>Booster Count</td>
+                <td>{{ rocketDetails.boosters }}</td>
+            </tr>
+        </table>  
+    </div>    
+    <br><hr><br>
+    <h4>Images of {{ rocketDetails.name}}</h4>
+    <div class="picRow">
+        <div *ngFor="let image of rocketDetails.flickr_images" class="picColumn">
+            <img class="cardImage" [src]="image">
+        </div>
+    </div> 
+
+    <div class="go-back-button">
+        <button mat-fab color="accent" (click)="goBack()" aria-label="Go to Previous Page">
+        <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+</div>

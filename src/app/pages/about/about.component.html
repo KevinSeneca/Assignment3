@@ -1,0 +1,22 @@
+<div *ngIf="loading" class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+    <span>Loading...</span>
+</div>
+  
+<div *ngIf="error">
+    <p class="errorMessage">Something went wrong...</p>
+</div>
+
+<div *ngIf="company">
+!    <div *ngIf="showMe" class="mainPage">
+        <span class="pageTitle">{{ title }} {{ company.name }}</span>
+        <ul>
+        <li>{{ company.name }} was founded in {{company.founded}}.</li>
+        <li>The current CEO is {{company.ceo}}.</li>
+        <li>The current COO is {{company.coo}}.</li>
+        <li>The company is valued at {{ company.valuation | currency }}</li>
+        <li>{{ company.summary }}</li>
+        </ul>
+    </div>
+</div>
+  

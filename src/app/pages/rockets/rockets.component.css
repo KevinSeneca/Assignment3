@@ -1,0 +1,21 @@
+.rocketCard {
+    text-align: justify;
+    max-width: 600px;
+    width: 100%;
+    height: 400px;
+    margin: 20px;
+}
+
+  .cardImage{
+    object-fit: cover; 
+    border-image: round;
+    align-items: center;
+    object-position: center;
+    height: 280px; /* adjust as needed */
+    object-fit: contain;
+}
+
+.buttonDetails {
+    margin: 10px;
+    left: 35%;
+}

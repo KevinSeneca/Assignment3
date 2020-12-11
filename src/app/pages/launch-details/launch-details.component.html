@@ -1,0 +1,25 @@
+<div *ngIf="loading" class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+    <span>Loading...</span>
+</div>
+  
+<div *ngIf="error">
+<p class="errorMessage">Something went wrong...</p>
+</div>
+
+<div *ngIf="showMe" class="mainPage">
+    <span class="pageTitle">{{ launchDetails.name }}</span>
+    <p>{{ rocketDetails.description }}</p>
+    <br><br>
+    <div class="row">     
+        <div *ngFor="let image of launchDetails.links.flickr.original" class="column">
+            <img class="cardImage" [src]="image" [alt]="launchDetails.name">
+        </div>
+    </div>
+</div>    
+
+    <div class="go-back-button">
+        <button mat-fab color="accent" (click)="goBack()" aria-label="Go to Previous Page">
+        <mat-icon>arrow_back</mat-icon>
+        </button>
+   </div>

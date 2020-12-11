@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pageTitle {
+    margin-left: 10px;
+    font-size: 2rem;
+    color: violet;
+    font-weight: bold;
+}
+
+.mat-spinner {
+    color: "primary";
+    zoom: 0.5;
+}
+
+.loadingSpinner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+.go-back-button {
+    position: fixed;
+    top: 5px;
+    right: 40px;
+    z-index: 90210;
+  }
+

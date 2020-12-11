@@ -1,0 +1,28 @@
+<div *ngIf="loading" class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+    <span>Loading...</span>
+</div>
+  
+<div *ngIf="error">
+    <p class="errorText">Something went wrong...</p>
+</div>
+
+<div *ngIf="showMe" class="mainPage">
+    <span class="pageTitle">{{ title }}</span>
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile class="gridTile" *ngFor="let event of history">
+            <mat-card class="historyCard">
+                <mat-card-header>
+                    <mat-card-title>{{ event.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ event.event_date_utc | date}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                <p>{{ event.details }}</p>
+                </mat-card-content>
+                <mat-card-actions class="something">
+                    <a class="link-button" [href]="event.links.article" target="_blank">External Article</a>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
